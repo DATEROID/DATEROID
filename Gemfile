@@ -7,6 +7,7 @@ group :default do
   gem 'coffee-rails'
 
   gem 'active_model_serializers'
+  gem 'facebook-messenger'
 end
 
 group :test, :development do
