@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 
 group :default do
-  gem 'rails'
+  gem 'rails', '~> 4.2.10'
   gem 'sass-rails'
   gem 'uglifier'
   gem 'coffee-rails'
 
   gem 'active_model_serializers'
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
 end
 
 group :test, :development do
@@ -33,7 +34,7 @@ group :development do
   gem 'bullet'
   gem 'quiet_assets'
   gem 'rails_best_practices'
-  gem 'did_you_mean'
+  gem 'did_you_mean', '~> 1.0.2'
 
   gem 'annotate'
 end

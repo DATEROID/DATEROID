@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  match 'webhook' => 'main#webhook', :via => :post
+  match 'fb_bot_webhook' => 'webhooks#fb_bot', :via => :post
 end
