@@ -11,8 +11,8 @@ class WebhooksController < ApplicationController
     	# Userモデルを取得
 
     	# プレーンテキスト取得
-    	message = "デート相手を探す"
-    	#message = params["entry"][0]["messaging"][0]
+    	message = "デート相手を探して" #For Debug
+    	#message = params["entry"][0]["messaging"][0]的なのでFB botから取得するように
 
     	# DialogflowへAPI投げる
 	    dialogflow_result_hash = get_dialogflow_result(DIALOGFLOW_API_ENDPOINT, "デート", 12345)
