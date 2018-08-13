@@ -1,12 +1,12 @@
 module Utils
-  class ActionAllocator
-    def initialize(user, action)
+  class Action
+    def initialize(user, action_name)
       @user = user
-      @action = action
+      @name = action_name
     end
 
     def execute
-      case @action
+      case @name
       when "initial_question"
       	initial_question
       when "find_matching"
