@@ -17,10 +17,10 @@ class WebhooksController < ApplicationController
 
     	# DialogflowへAPI投げる
 	    dialogflow_result_hash = get_dialogflow_result(DIALOGFLOW_API_ENDPOINT, message, 12345)
-	    action = dialogflow_result_hash["result"]["action"]
+	    action_type = dialogflow_result_hash["result"]["action"]
 
     	# Dialogflowのレスポンスを見てアクション振り分け
-        Utils::ActionAllocator.new(user, action).execute
+        Utils::Action.new(user, action_type).execute
 
     	# レスポンス生成
     		# Response.find_match(fb, result) 的な応答を返す変数？
