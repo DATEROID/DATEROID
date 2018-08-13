@@ -1,12 +1,12 @@
 module Utils
   class Action
-    def initialize(user, action_name)
+    def initialize(user, action_type)
       @user = user
-      @name = action_name
+      @type = action_type
     end
 
     def execute
-      case @name
+      case @type
       when "initial_question"
       	initial_question
       when "find_matching"
