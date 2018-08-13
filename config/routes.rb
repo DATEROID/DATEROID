@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  use_doorkeeper
+  devise_for :users
+  root :to => 'pages#home'
   match 'fb_bot_webhook' => 'webhooks#fb_bot', :via => :post
   match 'line_bot_webhook' => 'webhooks#line_bot', :via => :post
   match 'google_assisntant_ss_webhook' => 'webhooks#google_assisntant_ss', :via => :post
