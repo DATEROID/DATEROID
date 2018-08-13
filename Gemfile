@@ -5,9 +5,15 @@ group :default do
   gem 'sass-rails'
   gem 'uglifier'
   gem 'coffee-rails'
+  gem 'jquery-rails'
+  gem 'turbolinks'
 
   gem 'active_model_serializers'
   gem 'dotenv-rails', require: 'dotenv/rails-now'
+  gem 'devise'
+  gem 'omniauth'
+  gem 'doorkeeper'
+  gem 'oauth2'
 end
 
 group :test, :development do
