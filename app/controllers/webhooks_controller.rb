@@ -30,6 +30,18 @@ class WebhooksController < ApplicationController
     	render json: {"test": "test2"}
     end
 
+    def line_bot
+    end
+
+    def google_assisntant_ss
+    end
+
+    def amason_alexa_ss
+    end
+
+    def line_clova_ss
+    end
+
     private
 
     	def get_dialogflow_result(endpoint, message, session_id)
