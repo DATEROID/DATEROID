@@ -9,24 +9,25 @@ class WebhooksController < ApplicationController
     	p "====[DEBUG param]===="
     	p params
     	# Userモデルを取得
+        user = "" #fordebug
 
     	# プレーンテキスト取得
     	message = "デート相手を探して" #For Debug
     	#message = params["entry"][0]["messaging"][0]的なのでFB botから取得するように
 
     	# DialogflowへAPI投げる
-	    dialogflow_result_hash = get_dialogflow_result(DIALOGFLOW_API_ENDPOINT, "デート", 12345)
-	    action = dialogflow_result_hash["result"]["action"] #actionを取得（find_matching, adjust_schedule のようなものを想定）
+	    dialogflow_result_hash = get_dialogflow_result(DIALOGFLOW_API_ENDPOINT, message, 12345)
+	    action = dialogflow_result_hash["result"]["action"]
 
     	# Dialogflowのレスポンスを見てアクション振り分け
-    		# Action.allocator(action, mode, user) 的なモジュールを用意すればいいのでは
+        Utils::ActionAllocator.new(user, action).execute
 
     	# レスポンス生成
     		# Response.find_match(fb, result) 的な応答を返す変数？
     		# 奈良ちゃんがモジュール化してくれる？
     		# Responseモデルとして管理するのがいいと思われる
 
-    	render json: {"test": "test"}
+    	render json: {"test": "test2"}
     end
 
     private
